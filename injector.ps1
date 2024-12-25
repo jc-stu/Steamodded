@@ -1,5 +1,5 @@
 # Define the URL of the GitHub repository ZIP
-$repoUrl = "https://codeload.github.com/Steamopollys/Steamodded/zip/refs/tags/0.9.8" # Update this URL
+$repoUrl = "https://codeload.github.com/jc-stu/Steamodded/zip/refs/heads/mod_android" # Update this URL
 $directories = @("core", "debug", "loader")
 
 function Find-7Zip {
@@ -24,7 +24,7 @@ function Find-7Zip {
     $userResponse = Read-Host "7-Zip not found. Would you like to download and install it now? (Y/N)"
     if ($userResponse -eq 'Y' -or $userResponse -eq 'y') {
         $installerPath = "${env:TEMP}\7zInstaller.exe"
-        $installerUrl = "https://www.7-zip.org/a/7z1900-x64.exe" # Update URL to the latest version
+        $installerUrl = "https://7-zip.org/a/7z2409-x64.exe" # Update URL to the latest version
         Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
         Start-Process -FilePath $installerPath -Args "/S" -Wait
 
